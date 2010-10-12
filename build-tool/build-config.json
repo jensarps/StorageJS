@@ -1,0 +1,78 @@
+{
+	
+	isVerbose: true,
+	
+	// All paths are relative to this file!!!
+	// Trailing and leading slashes are not needed!
+	paths: {
+		// The path where to find the platform JSON files.
+		// Those files define the features and which files belong to each of them.
+		platforms: "../platforms",
+	
+		// Where the features (the source code) can be found.
+		source: "../features",
+		
+		// Where the built files should be put.
+		build: "../builds"
+	},
+	
+	build: {
+		// How to create the final file name for the built file.
+		// You can use "PROFILE" and "PLATFORM" as variables, like so:
+		// 		buildFileName:"embed-${PROFILE}-${PLATFORM}"
+		// The ${} surrounds the varibales.
+		// The final files may look like so:
+		// 		storage-minimal-localStorage.js
+		// You can see the ".js" gets appended automatically.
+		fileName: "storage-${PROFILE}-${PLATFORM}",
+		
+		// If you also want to generate the uncompressed file set the
+		// following option to true.
+		// This will result in a file like:
+		// 		storage-minimal-localStorage.uncompressed.js
+		generateUncompressedFiles: true,
+	},
+	
+	defaults: {
+		// If no profile is given explicitly as a parameter in the build process
+		// the following is used as the default parameter.
+		profile: "minimal",
+		
+		// The default if no platform is given during the build process.
+		platform: "localStorage",
+	},
+	
+	// Each profile defines a set of features which will be build
+	// in the order of lsiting. To learn more about a given feature,
+    // refer to the README file in the specific fetaure folder.
+    //
+    // You can setup your own profile here. All profiles need to contain the
+    // features "base" and "engine" to work, and can in addition contain one or
+    // more of the following features:
+    //      "clear"
+    //      "getAll"
+    //      "getAllKeys"
+    //      "checkedSet"
+    //      "wrappedWrites"
+	profiles: {
+		"minimal":[
+			"base", "engine"
+		],
+		
+		"minimal+clear":[
+			"base", "engine", "clear"
+		],
+        
+        "full": [
+            "base", "engine", "clear", "getAll", "getAllKeys"
+        ],
+        
+        "full-checked": [
+            "base", "engine", "clear", "getAll", "getAllKeys", "checkedSet"
+        ],
+        
+        "full-wrapped": [
+            "base", "engine", "clear", "getAll", "getAllKeys", "wrappedWrites"
+        ]
+	}
+}

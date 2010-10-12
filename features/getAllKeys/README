@@ -1,0 +1,10 @@
+The feature "getAllKeys" adds the following method:
+
+ - storage.getAllKeys()
+ 
+ Calling getAll() will return an Array of all keys
+ present in storage.
+ 
+ Example return value:
+ 
+ ["foo", "bar"]

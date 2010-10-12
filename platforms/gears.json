@@ -1,0 +1,35 @@
+{
+    // This file defines the files that implement
+    // the given features for Google gears storage. 
+    //
+    // It must contain pointers to files for *ALL* 
+    // available features.
+    
+    "base": [
+        "storage.js"
+    ],
+    
+    "engine": [
+        "engine/gears.js"
+    ],
+    
+    "clear": [
+        "clear/gears.js"
+    ],
+    
+    "getAll": [
+        "getAll/gears.js"
+    ],
+    
+    "getAllKeys" : [
+        "getAllKeys/gears.js"
+    ],
+    
+    "checkedSet": [
+        "checkedSet/checkedSet.js"
+    ],
+    
+    "wrappedWrites": [
+        "wrappedWrites/wrappedWrites.js"
+    ]
+}

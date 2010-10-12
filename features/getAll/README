@@ -1,0 +1,19 @@
+The feature "getAll" adds the following method:
+
+ - storage.getAll()
+ 
+ Calling getAll() will return an Array of Objects, containing all 
+ key/value pairs present in storage.
+ 
+ Example return value:
+ 
+ [
+ 	{
+ 		key: "foo",
+ 		value: "foo-value"
+ 	},
+ 	{
+ 		key: "bar",
+ 		value: "bar-value"
+ 	}
+ ]

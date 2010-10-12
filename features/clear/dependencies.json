@@ -1,0 +1,8 @@
+{
+	"behavior.js": [ // The "clear" impl for the behavior storage relies on the "keyMap" feature.
+		"keyMap"
+	],
+	"widget.js": [ // The "clear" impl for the widget storage relies on the "keyMap" feature.
+		"keyMap"
+	]
+}

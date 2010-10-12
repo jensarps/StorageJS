@@ -1,0 +1,35 @@
+{
+    // This file defines the files that implement
+    // the given features for localStorage. 
+    //
+    // It must contain pointers to files for *ALL* 
+    // available features.
+    
+    "base": [
+        "storage.js"
+    ],
+    
+    "engine": [
+        "engine/localStorage.js"
+    ],
+    
+    "clear": [
+        "clear/localStorage.js"
+    ],
+    
+    "getAll": [
+        "getAll/localStorage.js"
+    ],
+    
+    "getAllKeys" : [
+        "getAllKeys/localStorage.js"
+    ],
+    
+    "checkedSet": [
+        "checkedSet/checkedSet.js"
+    ],
+    
+    "wrappedWrites": [
+        "wrappedWrites/wrappedWrites.js"
+    ]
+}

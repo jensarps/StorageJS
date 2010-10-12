@@ -1,0 +1,7 @@
+The feature "checkedSet" will modify the following method:
+
+ - storage.set(key, value)
+ 
+ When this feture is included, the set() method will check if the
+ write action was successful, and will return boolean true if it was,
+ and false if it failed.

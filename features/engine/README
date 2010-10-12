@@ -1,0 +1,8 @@
+The feature "engine" is the basic storage engine wrapper. It provides the
+following methods:
+
+ - storage.get(key)
+ - storage.set(key, value)
+ - storage.remove(key)
+ 
+ Note that "key" AND "value" MUST be strings!

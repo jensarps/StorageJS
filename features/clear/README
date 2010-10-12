@@ -1,0 +1,5 @@
+The feature "clear" adds the following method:
+
+ - storage.clear()
+ 
+ Calling clear() will clear the storage, i.e. remove all keys.

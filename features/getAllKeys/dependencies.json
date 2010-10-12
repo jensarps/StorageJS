@@ -1,0 +1,5 @@
+{
+	"keymapped.js": [ // The "getAllKeys" impls using keymap rely on the "keyMap" feature.
+		"keyMap"
+	]
+}

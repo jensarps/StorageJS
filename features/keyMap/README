@@ -1,0 +1,6 @@
+The feature "keyMap" will neither add or modify any API method.
+
+It's a special feature needed to provide features like clear or getAll
+for certain storage engines. You don't have to include it yourself,
+this is all handled by dependency resolution. Fell free to ignore
+this feature :)

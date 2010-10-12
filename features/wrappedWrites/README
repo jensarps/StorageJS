@@ -1,0 +1,12 @@
+The feature "wrappedWrites" will modify the following methods:
+
+ - storage.set(key, value)
+ - storage.remove(key)
+ - storage.clear()   [if present]
+ 
+ When this feture is included, all write access to storage
+ will be wrapped in try/catch blocks, and the above mentioned
+ methods will return false if an Error occurred within write
+ access and true if not.
+ 
+ Note that this is an expensive thing to do!
