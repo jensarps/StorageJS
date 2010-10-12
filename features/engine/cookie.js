@@ -1,33 +1,13 @@
-storage.addEngine('cookie',{
+storage.addEngine('cookie',(function() {
+	var cookieName = 'StorageJSCookie',
+			store = {};
 	
-	cookieName: 'StorageJSCookie',
-	
-	store: {},
-	
-	init: function(){
-		this.readStoreFromCookie();
-	},
-	
-	get: function(key){
-		return this.store[key] || null;
-	},
-	
-	set: function(key, value){
-		this.store[key] = value;
-		this.updateCookie();
-	},
-	
-	remove: function(key){
-		delete this.store[key];
-		this.updateCookie();
-	},
-	
-	updateCookie: function(){
-		var cookieString = this.stringify(this.store);
+	function updateCookie() {
+		var cookieString = stringify(store);
 		var c = document.cookie;
 		var props = {
 			expires: 100
-		}
+		};
 		// this is a shameless theft from dojo.
 		var exp = props.expires;
 		if(typeof exp == "number"){ 
@@ -38,36 +18,34 @@ storage.addEngine('cookie',{
 		if(exp && exp.toUTCString){ props.expires = exp.toUTCString(); }
 
 		var value = encodeURIComponent(cookieString);
-		var updatedCookie = this.cookieName + "=" + value, propName;
+		var updatedCookie = cookieName + "=" + value, propName;
 		for(propName in props){
 			updatedCookie += "; " + propName;
 			var propValue = props[propName];
 			if(propValue !== true){ updatedCookie += "=" + propValue; }
 		}
 		document.cookie = updatedCookie;
-	},
+	}
 	
-	readStoreFromCookie: function(){
+	function readStoreFromCookie() {
 		var c = document.cookie;
-		var matches = c.match(new RegExp("(?:^|; )" + this.cookieName + "=([^;]*)"));
-		var data = matches ? this.parse(decodeURIComponent(matches[1])) : {};
-		
-		this.store = data;
-	},
+		var matches = c.match(new RegExp("(?:^|; )" + cookieName + "=([^;]*)"));
+		store = matches ? parse(decodeURIComponent(matches[1])) : {};
+	}
 	
-	stringify: function(data){
+	function stringify(data){
 		if(typeof(JSON) != 'undefined' && JSON.stringify){
 			return JSON.stringify(data);
 		}
 		var string = '';
-		for(var item in this.store){
-			string += item + ':sjs-kv:' + this.store[item] + ':sjs-i:';
+		for(var item in store){
+			string += item + ':sjs-kv:' + store[item] + ':sjs-i:';
 		}
 		string = string.substring(0,string.length - 8);
 		return string;
-	},
-	
-	parse: function(string){
+	}
+
+	function parse(string){
 		if(typeof(JSON) != 'undefined' && JSON.parse){
 			return JSON.parse(string);
 		}
@@ -79,4 +57,25 @@ storage.addEngine('cookie',{
 		}
 		return data;
 	}
-});
+
+	return {
+		init: function(){
+			readStoreFromCookie();
+		},
+
+		get: function(key){
+			return store[key] || null;
+		},
+
+		set: function(key, value){
+			store[key] = value;
+			updateCookie();
+		},
+
+		remove: function(key){
+			delete store[key];
+			updateCookie();
+		}
+	};
+	
+})());
