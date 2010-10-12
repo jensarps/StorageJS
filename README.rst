@@ -15,8 +15,8 @@ b) You have different output builds for the different storage backends. There is
 That way, you have the smallest possible footprint for your project, and deliver only the code that you really need for your project.
 
 
-Suppoerted Storage Engines
---------------------------
+Supported Storage Engines
+-------------------------
 
 StorageJS supports localStorage, Widget preference store, Gears, userData behavior and Cookies. Due to the fact that StorageJS provides sync read access to storage, there's no support for Sqlite impls.
 
@@ -52,9 +52,14 @@ The minimal profile, containing the base feature "engine", results in builds of 
 
 ::
 
-storage-minimal-behavior.js          876b
-storage-minimal-cookie.js           1534b
-storage-minimal-gears.js            1656b
-storage-minimal-localStorage.js      332b
-storage-minimal-widget.js            455b
+  storage-minimal-behavior.js          876b
+  storage-minimal-cookie.js           1534b
+  storage-minimal-gears.js            1656b
+  storage-minimal-localStorage.js      332b
+  storage-minimal-widget.js            455b
+  
+  
+Documentation
+-------------
 
+Will follow soon, I promise.
