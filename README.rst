@@ -42,13 +42,24 @@ Building
 
 To create a build specific to your project, you can cherry-pick whatever features you need and create a profile. However, some default profiles that cover the most use cases are already pre-defined. Inside of the "builds" directory are ready made builds you can use out of the box.
 
-To build your custom profile, you need the EmbedJS build tool. Get it from github and copy it into the build-tool directory (just don't overwrite the build-config.json). Next, you need to modify the build-config.json file. It's well commented, so don't hesitate! Finally, run the build.sh shell script to create your builds.
+To build your custom profile, you need the EmbedJS build tool. You can get it from github. Next, you need to modify the build-config.json file. It's well commented, so don't hesitate! Finally, run the build.sh shell script to create your builds.
+
+::
+  
+  # Clone the repos
+  > git clone git@github.com:jensarps/StorageJS.git
+  > git clone git@github.com:uxebu/embedjs-tools.git
+
+  # trigger the actual build using the embedjs-tools bash script
+  > cd StorageJS
+  > ../embedjs-tools/build.sh profile=YourCustomProfile
+  
 
 
 Size matters
 ------------
 
-The minimal profile, containing the base feature "engine", results in builds of the following size (not gzipped):
+The minimal profile, containing the base feature "engine" (providing the get/set/remove methods), results in builds of the following size (not gzipped):
 
 ::
 

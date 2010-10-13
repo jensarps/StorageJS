@@ -7,13 +7,13 @@
 	paths: {
 		// The path where to find the platform JSON files.
 		// Those files define the features and which files belong to each of them.
-		platforms: "../platforms",
+		platforms: "platforms",
 	
 		// Where the features (the source code) can be found.
-		source: "../features",
+		source: "features",
 		
 		// Where the built files should be put.
-		build: "../builds"
+		build: "builds"
 	},
 	
 	build: {
