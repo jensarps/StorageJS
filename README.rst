@@ -63,11 +63,11 @@ The minimal profile, containing the base feature "engine" (providing the get/set
 
 ::
 
-  storage-minimal-behavior.js          876b
-  storage-minimal-cookie.js           1534b
-  storage-minimal-gears.js            1656b
-  storage-minimal-localStorage.js      332b
-  storage-minimal-widget.js            455b
+  storage-minimal-behavior.js          755b
+  storage-minimal-cookie.js           1413b
+  storage-minimal-gears.js            1535b
+  storage-minimal-localStorage.js      195b
+  storage-minimal-widget.js            318b
   
   
 Documentation
