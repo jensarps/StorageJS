@@ -1,4 +1,6 @@
-storage.addEngine('behavior',{
+var storage = {
+		
+	engine: "behavior",
 	
 	store: null,
 	
@@ -41,4 +43,6 @@ storage.addEngine('behavior',{
 	ensureKeyInMap: function(){},
 	
 	removeKeyFromMap: function(){}
-});
+};
+
+storage.init();

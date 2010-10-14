@@ -1,4 +1,6 @@
-storage.addEngine('cookie',{
+var storage = {
+		
+	engine: "cookie",
 	
 	cookieName: 'StorageJSCookie',
 	
@@ -79,4 +81,6 @@ storage.addEngine('cookie',{
 		}
 		return data;
 	}
-});
+};
+
+storage.init();

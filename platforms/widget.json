@@ -5,10 +5,6 @@
     // It must contain pointers to files for *ALL* 
     // available features.
     
-    "base": [
-        "storage.js"
-    ],
-    
     "engine": [
         "engine/widget.js"
     ],

@@ -1,4 +1,6 @@
-storage.addEngine('localStorage',{
+var storage = {
+		
+	engine: "localStorage",
 	
 	get: function(key){
 		return localStorage.getItem(key);
@@ -11,4 +13,4 @@ storage.addEngine('localStorage',{
 	remove: function(key){
 		localStorage.removeItem(key);
 	}
-});
+};

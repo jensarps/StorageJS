@@ -1,11 +1,4 @@
-var storage={engine:null,addEngine:function(_1,_2){
-for(var _3 in _2){
-storage[_3]=_2[_3];
-}
-this.engine=_1;
-this.init&&this.init();
-}};
-storage.addEngine("cookie",{cookieName:"StorageJSCookie",store:{},init:function(){
+var storage={engine:"cookie",cookieName:"StorageJSCookie",store:{},init:function(){
 this.readStoreFromCookie();
 },get:function(_1){
 return this.store[_1]||null;
@@ -64,5 +57,6 @@ kv=_13[i].split(":sjs-kv:");
 _12[kv[0]]=kv[1];
 }
 return _12;
-}});
+}};
+storage.init();
 

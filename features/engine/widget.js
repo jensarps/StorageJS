@@ -1,4 +1,6 @@
-storage.addEngine('widget',{
+var storage = {
+		
+	engine: "widget",
 	
 	get: function(key){
 		return widget.preferenceForKey(key);
@@ -19,4 +21,4 @@ storage.addEngine('widget',{
 	ensureKeyInMap: function(){},
 	
 	removeKeyFromMap: function(){}
-});
+};

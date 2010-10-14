@@ -1,7 +1,9 @@
 // The initGears method is Copyright 2007, Google Inc.
 
 
-storage.addEngine('gears',{
+var storage = {
+		
+	engine: "gears",
 	
 	dbName: 'SJSDatabase',
 	
@@ -97,4 +99,6 @@ storage.addEngine('gears',{
 	  }
 
 	}
-});
+};
+
+storage.init();

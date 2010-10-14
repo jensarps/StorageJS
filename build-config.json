@@ -47,8 +47,8 @@
     // refer to the README file in the specific fetaure folder.
     //
     // You can setup your own profile here. All profiles need to contain the
-    // features "base" and "engine" to work, and can in addition contain one or
-    // more of the following features:
+    // feature "engine" to work, and can in addition contain one or more of
+    // the following features:
     //      "clear"
     //      "getAll"
     //      "getAllKeys"
@@ -56,23 +56,23 @@
     //      "wrappedWrites"
 	profiles: {
 		"minimal":[
-			"base", "engine"
+			"engine"
 		],
 		
 		"minimal+clear":[
-			"base", "engine", "clear"
+			"engine", "clear"
 		],
         
         "full": [
-            "base", "engine", "clear", "getAll", "getAllKeys"
+            "engine", "clear", "getAll", "getAllKeys"
         ],
         
         "full-checked": [
-            "base", "engine", "clear", "getAll", "getAllKeys", "checkedSet"
+            "engine", "clear", "getAll", "getAllKeys", "checkedSet"
         ],
         
         "full-wrapped": [
-            "base", "engine", "clear", "getAll", "getAllKeys", "wrappedWrites"
+            "engine", "clear", "getAll", "getAllKeys", "wrappedWrites"
         ]
 	}
 }

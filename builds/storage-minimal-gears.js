@@ -1,11 +1,4 @@
-var storage={engine:null,addEngine:function(_1,_2){
-for(var _3 in _2){
-storage[_3]=_2[_3];
-}
-this.engine=_1;
-this.init&&this.init();
-}};
-storage.addEngine("gears",{dbName:"SJSDatabase",tableName:"SJSStorageTable",db:null,init:function(){
+var storage={engine:"gears",dbName:"SJSDatabase",tableName:"SJSStorageTable",db:null,init:function(){
 this.initGears();
 this.db=google.gears.factory.create("beta.database");
 this.db.open(this.dbName);
@@ -63,5 +56,6 @@ google={};
 if(!google.gears){
 google.gears={factory:_6};
 }
-}});
+}};
+storage.init();
 

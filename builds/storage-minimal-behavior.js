@@ -1,11 +1,4 @@
-var storage={engine:null,addEngine:function(_1,_2){
-for(var _3 in _2){
-storage[_3]=_2[_3];
-}
-this.engine=_1;
-this.init&&this.init();
-}};
-storage.addEngine("behavior",{store:null,storeName:"__StorageJS_BehaviorStorage",init:function(){
+var storage={engine:"behavior",store:null,storeName:"__StorageJS_BehaviorStorage",init:function(){
 this.store=this._createStore();
 this.store.load(this.storeName);
 },_createStore:function(){
@@ -27,5 +20,6 @@ this.store.removeAttribute(_5);
 this.store.save(this.storeName);
 },ensureKeyInMap:function(){
 },removeKeyFromMap:function(){
-}});
+}};
+storage.init();
 

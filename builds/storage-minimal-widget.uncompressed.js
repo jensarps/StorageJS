@@ -2,32 +2,13 @@
 
 
 /*********FILE**********
-/../features/storage.js
+/features/engine/widget.js
 ********************/
 
 
 var storage = {
-	
-	engine: null,
-	
-	addEngine: function(engineName, mixin){
-		for(var prop in mixin){
-			storage[prop] = mixin[prop];
-		}
-		this.engine = engineName;
 		
-		this.init && this.init();
-	}
-};
-
-
-
-/*********FILE**********
-/../features/engine/widget.js
-********************/
-
-
-storage.addEngine('widget',{
+	engine: "widget",
 	
 	get: function(key){
 		return widget.preferenceForKey(key);
@@ -48,4 +29,4 @@ storage.addEngine('widget',{
 	ensureKeyInMap: function(){},
 	
 	removeKeyFromMap: function(){}
-});
+};

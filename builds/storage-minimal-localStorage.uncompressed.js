@@ -2,32 +2,13 @@
 
 
 /*********FILE**********
-/../features/storage.js
+/features/engine/localStorage.js
 ********************/
 
 
 var storage = {
-	
-	engine: null,
-	
-	addEngine: function(engineName, mixin){
-		for(var prop in mixin){
-			storage[prop] = mixin[prop];
-		}
-		this.engine = engineName;
 		
-		this.init && this.init();
-	}
-};
-
-
-
-/*********FILE**********
-/../features/engine/localStorage.js
-********************/
-
-
-storage.addEngine('localStorage',{
+	engine: "localStorage",
 	
 	get: function(key){
 		return localStorage.getItem(key);
@@ -40,4 +21,4 @@ storage.addEngine('localStorage',{
 	remove: function(key){
 		localStorage.removeItem(key);
 	}
-});
+};

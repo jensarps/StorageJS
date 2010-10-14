@@ -2,32 +2,13 @@
 
 
 /*********FILE**********
-/../features/storage.js
+/features/engine/behavior.js
 ********************/
 
 
 var storage = {
-	
-	engine: null,
-	
-	addEngine: function(engineName, mixin){
-		for(var prop in mixin){
-			storage[prop] = mixin[prop];
-		}
-		this.engine = engineName;
 		
-		this.init && this.init();
-	}
-};
-
-
-
-/*********FILE**********
-/../features/engine/behavior.js
-********************/
-
-
-storage.addEngine('behavior',{
+	engine: "behavior",
 	
 	store: null,
 	
@@ -70,4 +51,6 @@ storage.addEngine('behavior',{
 	ensureKeyInMap: function(){},
 	
 	removeKeyFromMap: function(){}
-});
+};
+
+storage.init();

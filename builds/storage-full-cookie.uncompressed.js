@@ -2,32 +2,13 @@
 
 
 /*********FILE**********
-/../features/storage.js
+/features/engine/cookie.js
 ********************/
 
 
 var storage = {
-	
-	engine: null,
-	
-	addEngine: function(engineName, mixin){
-		for(var prop in mixin){
-			storage[prop] = mixin[prop];
-		}
-		this.engine = engineName;
 		
-		this.init && this.init();
-	}
-};
-
-
-
-/*********FILE**********
-/../features/engine/cookie.js
-********************/
-
-
-storage.addEngine('cookie',{
+	engine: "cookie",
 	
 	cookieName: 'StorageJSCookie',
 	
@@ -108,12 +89,14 @@ storage.addEngine('cookie',{
 		}
 		return data;
 	}
-});
+};
+
+storage.init();
 
 
 
 /*********FILE**********
-/../features/clear/cookie.js
+/features/clear/cookie.js
 ********************/
 
 
@@ -125,7 +108,7 @@ storage.clear = function(){
 
 
 /*********FILE**********
-/../features/getAll/cookie.js
+/features/getAll/cookie.js
 ********************/
 
 
@@ -140,7 +123,7 @@ storage.getAll = function(){
 
 
 /*********FILE**********
-/../features/getAllKeys/cookie.js
+/features/getAllKeys/cookie.js
 ********************/
 
 

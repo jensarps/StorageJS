@@ -2,35 +2,16 @@
 
 
 /*********FILE**********
-/../features/storage.js
-********************/
-
-
-var storage = {
-	
-	engine: null,
-	
-	addEngine: function(engineName, mixin){
-		for(var prop in mixin){
-			storage[prop] = mixin[prop];
-		}
-		this.engine = engineName;
-		
-		this.init && this.init();
-	}
-};
-
-
-
-/*********FILE**********
-/../features/engine/gears.js
+/features/engine/gears.js
 ********************/
 
 
 // The initGears method is Copyright 2007, Google Inc.
 
 
-storage.addEngine('gears',{
+var storage = {
+		
+	engine: "gears",
 	
 	dbName: 'SJSDatabase',
 	
@@ -126,4 +107,6 @@ storage.addEngine('gears',{
 	  }
 
 	}
-});
+};
+
+storage.init();
