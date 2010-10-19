@@ -4,7 +4,7 @@
 	storage.set = function(key, value){
 		var result = false;
 		try{
-			result = oldSet(key, value);
+			result = oldSet.call(storage, key, value);
 		}catch(e){
 		}
 		return result;
@@ -15,7 +15,7 @@
 	storage.remove = function(key, value){
 		var result = false;
 		try{
-			oldRemove(key, value);
+			oldRemove.call(storage, key, value);
 			result = true;
 		}catch(e){
 		}
@@ -28,7 +28,7 @@
 		storage.clear = function(key, value){
 			var result = false;
 			try{
-				oldClear(key, value);
+				oldClear.clall(storage, key, value);
 				result = true;
 			}catch(e){
 			}
