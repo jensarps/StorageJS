@@ -29,7 +29,7 @@
 		storage.clear = function(key, value){
 			var result = false;
 			try{
-				oldClear.clall(storage, key, value);
+				oldClear.call(storage, key, value);
 				result = true;
 			}catch(e){
 			}
