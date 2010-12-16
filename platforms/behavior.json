@@ -10,8 +10,6 @@
     ],
     
     "keyMap": [
-        "keyMap/generic.js",
-        "keyMap/behavior.js"
     ],
     
     "clear": [
@@ -19,11 +17,11 @@
     ],
     
     "getAll": [
-        "getAll/keymapped.js"
+        "getAll/behavior.js"
     ],
     
     "getAllKeys" : [
-        "getAllKeys/keymapped.js"
+        "getAllKeys/behavior.js"
     ],
     
     "checkedSet": [

@@ -1,7 +1,7 @@
 storage.clear = function(){
-	for(var i = 0, m = this.keys.length; i < m; i++){
-		this.store.removeAttribute(this.keys[i]);
+	var attributes = this.store.XMLDocument.documentElement.attributes;
+	for(var i = 0, m = attributes.length; i < m; i++){
+		this.store.removeAttribute(attributes[0].name);
 	}
-	this.keys = [];
-	this.saveKeyMap(); // This also saves the store.
+	this.store.save(this.storeName);
 };

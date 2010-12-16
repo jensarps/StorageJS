@@ -27,22 +27,14 @@ var storage = {
 	},
 	
 	set: function(key, value){
-		this.ensureKeyInMap(key);
 		this.store.setAttribute(key, value);
 		this.store.save(this.storeName);
 	},
 	
 	remove: function(key){
-		this.removeKeyFromMap(key);
 		this.store.removeAttribute(key);
 		this.store.save(this.storeName);
-	},
-	
-	/* -- stubs for keymap feature -- */
-	
-	ensureKeyInMap: function(){},
-	
-	removeKeyFromMap: function(){}
+	}
 };
 
 storage.init();
