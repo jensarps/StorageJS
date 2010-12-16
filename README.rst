@@ -63,13 +63,25 @@ The minimal profile, containing the base feature "engine" (providing the get/set
 
 ::
 
-  storage-minimal-behavior.js          755b
-  storage-minimal-cookie.js           1413b
-  storage-minimal-gears.js            1535b
-  storage-minimal-localStorage.js      195b
-  storage-minimal-widget.js            318b
-  
-  
+  storage-minimal-behavior.js          622b
+  storage-minimal-cookie.js           1351b
+  storage-minimal-gears.js            1474b
+  storage-minimal-localStorage.js      187b
+  storage-minimal-widget.js            306b
+
+
+The full profile, including the features getAllKeys, getAll and clear (providing the methods getAllKeys(), getAll() and clear()), results in builds of the following size (not gzipped):
+
+::
+
+  storage-full-behavior.js            1157b
+  storage-full-cookie.js              1626b
+  storage-full-gears.js               1996b
+  storage-full-localStorage.js         509b
+  storage-full-widget.js              1677b
+
+
+
 Documentation
 -------------
 
