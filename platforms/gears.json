@@ -27,5 +27,9 @@
     
     "wrappedWrites": [
         "wrappedWrites/wrappedWrites.js"
+    ],
+    
+    "object": [
+        "object/object.js"
     ]
 }
