@@ -23,7 +23,7 @@ var storage = {
 	},
 	
 	get: function(key){
-		return this.store.getAttribute(key);
+		return this.store.getAttribute(key) || null;
 	},
 	
 	set: function(key, value){

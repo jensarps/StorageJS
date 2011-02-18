@@ -3,7 +3,7 @@ var storage = {
 	engine: "widget",
 	
 	get: function(key){
-		return widget.preferenceForKey(key);
+		return widget.preferenceForKey(key) || null;
 	},
 	
 	set: function(key, value){
