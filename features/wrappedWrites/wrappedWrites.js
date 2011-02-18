@@ -1,5 +1,4 @@
-(function(){
-	var oldSet = storage.set;
+(function(oldSet, oldGet, oldClear){
 	
 	storage.set = function(key, value){
 		var result = false;
@@ -11,8 +10,6 @@
 		return result;
 	};
 	
-	var oldRemove = storage.remove;
-	
 	storage.remove = function(key, value){
 		var result = false;
 		try{
@@ -23,8 +20,7 @@
 		return result;
 	};
 	
-	if(storage.clear){
-		var oldClear = storage.clear;
+	if(oldClear){
 		
 		storage.clear = function(key, value){
 			var result = false;
@@ -37,4 +33,4 @@
 		};
 	}
 	
-})();
+})(storage.set, storage.get, storage.clear);
