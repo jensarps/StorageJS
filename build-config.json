@@ -30,13 +30,13 @@
 		// following option to true.
 		// This will result in a file like:
 		// 		storage-minimal-localStorage.uncompressed.js
-		generateUncompressedFiles: true,
+		generateUncompressedFiles: false,
 	},
 	
 	defaults: {
 		// If no profile is given explicitly as a parameter in the build process
 		// the following is used as the default parameter.
-		profile: "minimal",
+		profile: "object",
 		
 		// The default if no platform is given during the build process.
 		platform: "localStorage",
@@ -54,7 +54,11 @@
     //      "getAllKeys"
     //      "checkedSet"
     //      "wrappedWrites"
+    //      "object"
 	profiles: {
+    
+        // Basic key/value, String only.
+        
 		"minimal":[
 			"engine"
 		],
@@ -75,8 +79,24 @@
             "engine", "clear", "getAll", "getAllKeys", "wrappedWrites"
         ],
         
-        "allOfThem": [
-            "engine", "clear", "getAll", "getAllKeys", "checkedSet", "wrappedWrites"
+        // Object store
+        
+        "object": [
+            "engine", "clear", "getAll", "getAllKeys", "object"
+        ],
+        
+        "object-checked": [
+            "engine", "clear", "getAll", "getAllKeys", "object", "checkedSet"
+        ],
+        
+        "object-wrapped": [
+            "engine", "clear", "getAll", "getAllKeys", "object", "wrappedWrites"
+        ],
+        
+        // Come get some
+        
+        "dnstuff": [
+            "engine", "clear", "getAll", "getAllKeys", "object", "checkedSet", "wrappedWrites"
         ]
 	}
 }
