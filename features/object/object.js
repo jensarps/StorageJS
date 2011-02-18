@@ -1,10 +1,10 @@
-;(function(){
+;(function(oldSet, oldGet){
 	
-	storage.getObject = function(/* String */ key, /* Function? */ parse){
+	storage.get = function(/* String */ key, /* Function? */ parse){
 		//	summary:
 		//		Retrieves an object from storage.
 		//	description:
-		//		With `storage.getObject` you can retrieve
+		//		With `storage.get` you can retrieve
 		//		a previously stored object from the storage.
 		//		If there is no item associated with the
 		//		given key, `getObject` will return `null`.
@@ -18,12 +18,12 @@
 		//		method is given, the JSON.parse method is
 		//		used.
 		//	example:
-		//	|	var valueObj = storage.getObject('someKey');
+		//	|	var valueObj = storage.get('someKey');
 		parse = parse || JSON.parse;
-		return parse(this.get(key));
+		return parse(oldGet.call(storage, key));
 	};
 	
-	storage.setObject = function(/* String */ key, /* Object */ value, /* Funtion? */ stringify){
+	storage.set = function(/* String */ key, /* Object */ value, /* Funtion? */ stringify){
 		//	summary:
 		//		Stores a key/value pair in the storage.
 		//	description:
@@ -37,7 +37,7 @@
 		//		repleaced with the new one.
 		//		Returns nothing.
 		//	feature:
-		//		engine
+		//		object
 		//	key: String
 		//		The unique key to store the value under.
 		//		This key is the identifier of the value,
@@ -51,9 +51,9 @@
 		//		stringify method is given, the JSON.stringify
 		//		method is used.
 		//	example:
-		//	|	storage.setObject('someKey', 'someObject');
+		//	|	storage.set('someKey', 'someObject');
 		stringify = stringify || JSON.stringify;
-		return this.set(key, stringify(value));
+		return oldSet.call(storage, key, stringify(value));
 	};
 	
-})();
+})(storage.get, storage.set);
