@@ -4,8 +4,8 @@
 	storage.set = function(key, value){
 		var result = false;
 		try{
-			oldSet.call(storage, key, value);
-			result = true;
+			result = oldSet.call(storage, key, value);
+			result = (result === false) ? false : true;
 		}catch(e){
 		}
 		return result;

@@ -73,6 +73,10 @@
         
         "full-wrapped": [
             "engine", "clear", "getAll", "getAllKeys", "wrappedWrites"
+        ],
+        
+        "allOfThem": [
+            "engine", "clear", "getAll", "getAllKeys", "checkedSet", "wrappedWrites"
         ]
 	}
 }

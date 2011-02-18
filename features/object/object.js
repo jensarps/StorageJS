@@ -19,8 +19,7 @@
 		//		used.
 		//	example:
 		//	|	var valueObj = storage.get('someKey');
-		parse = parse || JSON.parse;
-		return parse(oldGet.call(storage, key));
+		return (parse || JSON.parse)(oldGet.call(storage, key));
 	};
 	
 	storage.set = function(/* String */ key, /* Object */ value, /* Funtion? */ stringify){
@@ -52,8 +51,7 @@
 		//		method is used.
 		//	example:
 		//	|	storage.set('someKey', 'someObject');
-		stringify = stringify || JSON.stringify;
-		return oldSet.call(storage, key, stringify(value));
+		return oldSet.call(storage, key, (stringify || JSON.stringify)(value));
 	};
 	
 })(storage.get, storage.set);
