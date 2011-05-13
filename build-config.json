@@ -36,7 +36,7 @@
 	defaults: {
 		// If no profile is given explicitly as a parameter in the build process
 		// the following is used as the default parameter.
-		profile: "object",
+		profile: "full",
 		
 		// The default if no platform is given during the build process.
 		platform: "localStorage",
