@@ -85,4 +85,4 @@ The full profile, including the features getAllKeys, getAll and clear (providing
 Documentation
 -------------
 
-Will follow soon, I promise.
+Please see each feature's own Readme file, located in their respective directories.
